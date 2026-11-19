@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="no-referrer"><title>Booking receipt | TIDES</title><link rel="stylesheet" href="/css/style.css"></head>
+<body class="travel-app receipt-page">
+  <header class="app-header"><nav class="app-nav" aria-label="Visitor navigation"><a class="travel-brand" href="/">TIDES<span>.</span></a><div class="app-nav-links"><a href="/">Discover</a><a href="/my-bookings.html">My bookings</a></div><a class="app-nav-action tides-motion-control" href="/book.html">Plan another visit</a></nav></header>
+  <main class="page-main container">
+    <p id="receipt-notice" class="notice" role="status">Loading your paid receipt…</p>
+    <section class="form-card receipt-card hidden" id="confirmation-content" aria-live="polite">
+      <div class="receipt-brand"><span class="eyebrow">Tabango · Leyte · Philippines</span><strong>TIDES<span>.</span></strong></div>
+      <div id="confirmation-status" class="receipt-paid-stamp"></div>
+      <h1 class="page-title">Booking receipt</h1>
+      <p id="confirmation-message" class="muted"></p>
+      <div class="receipt-body">
+        <div class="receipt-line"><strong>Receipt / booking ID</strong><span id="confirmation-id"></span></div>
+        <div class="receipt-line"><strong>Visitor</strong><span id="confirmation-visitor"></span></div>
+        <div class="receipt-line"><strong>Email</strong><span id="confirmation-email"></span></div>
+        <div class="receipt-line"><strong>Visit date &amp; time</strong><span id="confirmation-date"></span></div>
+        <div class="receipt-line"><strong>Group size</strong><span id="confirmation-divers"></span></div>
+        <div class="receipt-line"><strong>Payment method</strong><span id="confirmation-method"></span></div>
+        <div class="receipt-line"><strong>Payment reference</strong><span id="confirmation-reference"></span></div>
+        <div class="receipt-line"><strong>Receipt image uploaded</strong><span id="confirmation-file"></span></div>
+        <div class="receipt-line"><strong>Payment status</strong><span id="confirmation-payment-status"></span></div>
+        <div class="receipt-line"><strong>Receipt submitted</strong><span id="confirmation-uploaded-at"></span></div>
+        <div class="receipt-line"><strong>Payment verified</strong><span id="confirmation-paid-at"></span></div>
+        <div id="confirmation-review-note" class="receipt-line hidden"><strong>Staff note</strong><span></span></div>
+        <div class="receipt-roster"><strong>Diver roster</strong><ul id="confirmation-diver-list" class="diver-roster"></ul></div>
+        <div class="receipt-total"><strong id="confirmation-total-label"></strong><strong id="confirmation-amount"></strong></div>
+      </div>
+      <div id="permit-section" class="receipt-permit">
+        <img id="confirmation-qr" class="qr-display hidden" alt="QR code to open the full TIDES booking receipt">
+        <p id="confirmation-qr-message" class="muted"></p>
+      </div>
+      <div class="form-actions receipt-actions">
+        <a class="button secondary" href="/my-bookings.html">My bookings</a>
+        <button id="download-receipt" type="button">Download full receipt + QR</button>
+        <button id="print-receipt" type="button" class="secondary">Print / Save as PDF</button>
+      </div>
+    </section>
+  </main>
+  <footer class="app-footer receipt-footer"><div class="app-footer-inner"><a class="travel-brand" href="/">TIDES<span>.</span></a><span>Tabango · Leyte · Philippines</span><strong>Protect the Shoal, Sustain the Future.</strong></div></footer>
+  <script src="/js/receipt.js"></script>
+  <script src="/js/confirmation.js"></script>
+  <script src="/js/animations.js"></script>
+</body>
+</html>

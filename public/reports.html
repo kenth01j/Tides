@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Reports &amp; analytics | TIDES</title><link rel="stylesheet" href="/css/style.css"></head>
+<body class="travel-app" data-role="admin">
+  <header class="app-header"><nav class="app-nav" aria-label="Staff navigation"><a class="travel-brand" href="/">TIDES<span>.</span></a><div class="app-nav-links"><a href="/">Home</a><a href="/admin.html">Dashboard</a><a href="/enforcement.html">Enforcement</a><a href="/password.html">Password</a></div><button class="app-nav-action" data-logout>Sign out</button></nav></header>
+  <main class="container admin-shell" id="reports-dashboard">
+    <div class="admin-heading"><div><div class="breadcrumbs">LGU operations / Analytics</div><h1 class="page-title">Reports &amp; analytics</h1><p class="muted">Track visitor activity, revenue, payment mix, and stewardship indicators.</p></div>
+      <div class="toolbar"><div class="field"><label for="report-period">Reporting period</label><select id="report-period"><option value="daily">Today</option><option value="weekly" selected>Last 7 days</option><option value="monthly">Last 30 days</option></select></div><button id="export-report" type="button">Export CSV</button></div>
+    </div>
+    <p id="reports-notice" class="notice" role="alert"></p>
+    <section class="stat-grid">
+      <article class="stat-card"><div class="stat-label">Platform adoption</div><div class="stat-value" id="kpi-adoption">—</div><div class="kpi-note">Online visits / online visits + no-permit incidents</div></article>
+      <article class="stat-card"><div class="stat-label">Compliance rate</div><div class="stat-value" id="kpi-compliance">—</div><div class="kpi-note">Checked-in entries / active paid bookings</div></article>
+      <article class="stat-card"><div class="stat-label">Cashless transactions</div><div class="stat-value" id="kpi-cashless">—</div><div class="kpi-note">Share of recorded paid booking revenue</div></article>
+      <article class="stat-card"><div class="stat-label">Booking processing</div><div class="stat-value" id="kpi-processing">—</div><div class="kpi-note">Average reservation-to-payment confirmation</div></article>
+      <article class="stat-card"><div class="stat-label">Revenue accuracy</div><div class="stat-value" id="kpi-accuracy">—</div><div class="kpi-note">Booking totals reconciled with payment records</div></article>
+      <article class="stat-card"><div class="stat-label">Visitors</div><div class="stat-value" id="kpi-visitors">—</div></article>
+      <article class="stat-card"><div class="stat-label">Revenue</div><div class="stat-value" id="kpi-revenue">—</div></article>
+      <article class="stat-card"><div class="stat-label">Incident reports</div><div class="stat-value" id="kpi-violations">—</div></article>
+    </section>
+    <div class="grid cols-2">
+      <section class="card chart-card"><h2>Daily visitors</h2><canvas id="visitors-chart" aria-label="Daily visitor chart"></canvas></section>
+      <section class="card chart-card"><h2>Revenue trend</h2><canvas id="revenue-chart" aria-label="Revenue trend chart"></canvas></section>
+      <section class="card chart-card"><h2>Payment method breakdown</h2><canvas id="payment-chart" aria-label="Payment method breakdown chart"></canvas></section>
+      <section class="card"><h2>Reading the indicators</h2><p class="muted">Compliance is based on bookings with an entry record. Revenue accuracy compares staff-approved paid booking totals with successful payment records. Platform adoption is an operational estimate using online visitors and recorded no-permit incidents. Visitor counts exclude cancelled bookings; revenue and payment-method totals include paid bookings even if later cancelled and do not account for refunds.</p><p class="callout">Visitors submit GCash or Maya payment receipt images for manual staff verification. No payment gateway or receiving account is connected to this site.</p></section>
+    </div>
+  </main>
+  <footer class="app-footer"><div class="app-footer-inner"><a class="travel-brand" href="/">TIDES<span>.</span></a><span>Analytics &amp; stewardship · Tabango</span><strong>Protect the Shoal, Sustain the Future.</strong></div></footer>
+  <script src="/js/auth.js"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script><script src="/js/reports.js"></script><script src="/js/animations.js"></script>
+</body>
+</html>

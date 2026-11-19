@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Visitor login | TIDES</title><link rel="stylesheet" href="/css/style.css"></head>
+<body class="travel-app split-screen-page signin-page">
+  <main class="split-layout">
+    <aside class="split-visual" aria-label="Underwater view of Kimud Shoal">
+      <a class="split-brand" href="/">TIDES<span>.</span></a>
+      <div class="split-visual-copy"><span>Tabango · Leyte · Philippines</span><p>Protect the Shoal,<br>Sustain the Future.</p></div>
+    </aside>
+    <section class="split-content" aria-labelledby="visitor-auth-title">
+      <div class="split-card signin-card">
+        <a class="split-back-link" href="/">← Visitor portal</a>
+        <span class="eyebrow">Plan your Kimud Shoal visit</span>
+        <h1 id="visitor-auth-title" class="page-title">Visitor login</h1>
+        <p class="muted">Create a visitor account or sign in before making a reservation.</p>
+        <form id="visitor-login-form">
+          <div class="field"><label for="visitor-login-email">Email</label><input id="visitor-login-email" name="email" type="email" autocomplete="username" required></div>
+          <div class="field" style="margin-top:1rem"><label for="visitor-login-password">Password</label><input id="visitor-login-password" name="password" type="password" autocomplete="current-password" required></div>
+          <p id="visitor-login-notice" class="notice" role="alert"></p>
+          <button class="tides-motion-control" type="submit">Sign in</button>
+        </form>
+        <form id="visitor-register-form" hidden>
+          <div class="field"><label for="visitor-register-name">Full name</label><input id="visitor-register-name" name="name" autocomplete="name" minlength="2" maxlength="100" required></div>
+          <div class="field" style="margin-top:1rem"><label for="visitor-register-email">Email</label><input id="visitor-register-email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field" style="margin-top:1rem"><label for="visitor-register-password">Password (at least 10 characters)</label><input id="visitor-register-password" name="password" type="password" autocomplete="new-password" minlength="10" maxlength="100" required></div>
+          <p id="visitor-register-notice" class="notice" role="alert"></p>
+          <button class="tides-motion-control" type="submit">Create visitor account</button>
+        </form>
+        <p class="split-security-note"><span id="visitor-auth-switch-copy">New here?</span> <button id="visitor-auth-switch" class="text-button" type="button" data-auth-mode="register">Create an account</button></p>
+      </div>
+    </section>
+  </main>
+  <script src="/js/visitor-auth.js"></script>
+  <script src="/js/animations.js"></script>
+</body>
+</html>

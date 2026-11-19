@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Staff sign in | TIDES</title><link rel="stylesheet" href="/css/style.css"></head>
+<body class="travel-app split-screen-page signin-page">
+  <main class="split-layout">
+    <aside class="split-visual" aria-label="Underwater view of Kimud Shoal">
+      <a class="split-brand" href="/">TIDES<span>.</span></a>
+      <div class="split-visual-copy"><span>Tabango · Leyte · Philippines</span><p>Protect the Shoal,<br>Sustain the Future.</p></div>
+    </aside>
+    <section class="split-content" aria-labelledby="signin-title">
+      <div class="split-card signin-card">
+        <a class="split-back-link" href="/">← Visitor portal</a>
+        <span class="eyebrow">Authorized staff access</span>
+        <h1 id="signin-title" class="page-title">Staff sign in</h1>
+        <p class="muted">Access the tourism operations portal for Tabango, Leyte.</p>
+        <form id="login-form">
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="username" required></div>
+          <div class="field" style="margin-top:1rem"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required></div>
+          <p id="login-notice" class="notice" role="alert"></p>
+          <button class="tides-motion-control" type="submit">Sign in</button>
+        </form>
+        <p class="split-security-note">For authorized Tabango tourism and enforcement personnel only.</p>
+      </div>
+    </section>
+  </main>
+  <script src="/js/auth.js"></script>
+  <script src="/js/animations.js"></script>
+</body>
+</html>

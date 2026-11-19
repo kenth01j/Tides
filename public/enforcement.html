@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Enforcement portal | TIDES</title><link rel="stylesheet" href="/css/style.css"></head>
+<body class="travel-app" data-role="enforcement">
+  <header class="app-header"><nav class="app-nav" aria-label="Staff navigation"><a class="travel-brand" href="/">TIDES<span>.</span></a><div class="app-nav-links"><a href="/">Home</a><a href="/admin.html">Dashboard</a><a href="/reports.html">Analytics</a><a href="/password.html">Password</a></div><button class="app-nav-action" data-logout>Sign out</button></nav></header>
+  <main class="container admin-shell">
+    <div class="breadcrumbs">Field operations / Enforcement</div><h1 class="page-title">Permit verification</h1>
+    <p class="muted">Scan a visitor QR code with a device camera/scanner, or paste its QR text below. Permits are valid only on the scheduled visit date.</p>
+    <div class="grid cols-2">
+      <section class="card">
+        <h2>Verify a permit</h2>
+        <form id="verify-form">
+          <div class="field"><label for="permit-code">QR code value</label><textarea id="permit-code" name="code" placeholder='Paste scanned QR text, e.g. {"bookingId":"…","verificationHash":"…"}' required></textarea></div>
+          <p id="enforcement-notice" class="notice" role="status"></p><button class="tides-motion-control" type="submit">Verify permit</button>
+        </form>
+        <div id="permit-result" class="card hidden" style="margin-top:1rem">
+          <h3>Verified visitor</h3>
+          <p><strong>Lead diver:</strong> <span id="permit-name"></span><br><strong>Booking:</strong> <span id="permit-id"></span><br><strong>Visit:</strong> <span id="permit-date"></span><br><strong>Divers paid:</strong> <span id="permit-count"></span><br><strong>Payment:</strong> <span id="permit-payment"></span><br><strong>Payment reference:</strong> <span id="permit-reference"></span><br><strong>Status:</strong> <span id="permit-status"></span><br><strong>Check-in:</strong> <span id="permit-checkin"></span><br><strong>Check-out:</strong> <span id="permit-checkout"></span></p>
+          <strong>Paid diver roster</strong>
+          <ul id="permit-diver-names" class="diver-roster"></ul>
+          <div class="form-actions"><button id="checkin-button" type="button">Log entry</button><button id="checkout-button" class="secondary" type="button">Log exit</button></div>
+        </div>
+      </section>
+      <section class="card">
+        <h2>Report an incident</h2><p class="muted">Record rule violations under Municipal Ordinance No. 2025-07, as well as permit and capacity issues.</p>
+        <form id="violation-form">
+          <div class="field"><label for="violation-type">Violation type</label><select id="violation-type" name="type" required><option value="overcrowding">Overcrowding</option><option value="no_permit">No permit</option><option value="illegal_fishing">Fishing</option><option value="coral_destruction">Coral destruction</option><option value="marine_life_collection">Collection of marine life</option><option value="shark_disturbance">Touching, chasing, or disturbing sharks</option><option value="unauthorized_underwater_activity">Freediving, snorkeling, or unauthorized activity</option><option value="prohibited_dive_training">Prohibited dive training</option><option value="after_hours_diving">Diving outside 6:00 AM–2:00 PM</option><option value="littering_pollution">Littering or pollution</option><option value="improper_anchoring">Improper anchoring</option><option value="safety_protocol_violation">Safety or conservation protocol violation</option><option value="other">Other</option></select></div>
+          <div class="field" style="margin-top:.8rem"><label for="violation-booking">Booking ID (optional)</label><input id="violation-booking" name="bookingId" maxlength="40"></div>
+          <div class="field" style="margin-top:.8rem"><label for="violation-description">Details</label><textarea id="violation-description" name="description" required minlength="5" maxlength="1000"></textarea></div>
+          <p id="violation-notice" class="notice" role="status"></p><button type="submit">Submit incident report</button>
+        </form>
+      </section>
+    </div>
+  </main>
+  <footer class="app-footer"><div class="app-footer-inner"><a class="travel-brand" href="/">TIDES<span>.</span></a><span>Field operations · Tabango, Leyte</span><strong>Protect the Shoal, Sustain the Future.</strong></div></footer>
+  <script src="/js/auth.js"></script><script src="/js/enforcement.js"></script><script src="/js/animations.js"></script>
+</body>
+</html>

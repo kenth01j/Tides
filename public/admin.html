@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>LGU dashboard | TIDES</title><link rel="stylesheet" href="/css/style.css"></head>
+<body class="travel-app" data-role="admin">
+  <header class="app-header"><nav class="app-nav" aria-label="Staff navigation"><a class="travel-brand" href="/">TIDES<span>.</span></a><div class="app-nav-links"><a href="/">Home</a><a href="/reports.html">Analytics</a><a href="/enforcement.html">Enforcement</a><a href="/password.html">Password</a></div><button class="app-nav-action" data-logout>Sign out</button></nav></header>
+  <main class="container admin-shell" id="admin-dashboard">
+    <div class="admin-heading"><div><div class="breadcrumbs">LGU operations / Dashboard</div><h1 class="page-title">Welcome, <span id="admin-name">team</span></h1><p class="muted">Visitor operations and sanctuary stewardship at a glance.</p></div><a class="button secondary tides-motion-control" href="/reports.html">View reports</a></div>
+    <div id="admin-notice" class="notice" role="alert"></div>
+    <section class="stat-grid" aria-label="Today's statistics">
+      <article class="stat-card"><div class="stat-label">Today's divers</div><div id="stat-visitors" class="stat-value">—</div></article>
+      <article class="stat-card"><div class="stat-label">Today's revenue</div><div id="stat-revenue" class="stat-value">—</div></article>
+      <article class="stat-card"><div class="stat-label">Capacity used</div><div id="stat-capacity" class="stat-value">—</div></article>
+      <article class="stat-card"><div class="stat-label">All-time revenue</div><div id="stat-total-revenue" class="stat-value">—</div></article>
+    </section>
+    <nav class="tabs" aria-label="Dashboard sections"><a class="active" href="#visitors">Visitors</a><a href="#permit-verification">Verify permit</a><a href="#capacity">Capacity</a><a href="#system-settings">System settings</a><a href="#user-management">User management</a><a href="#compliance">Compliance log</a><a href="#audit-log">Audit trail</a></nav>
+    <section id="visitors" class="card">
+      <h2>Visitor bookings</h2>
+      <details class="walk-in-panel">
+        <summary>Book a walk-in visitor (paid on-site)</summary>
+        <p class="muted">Create a booking for a visitor arriving today. Payment is recorded as paid on-site and a QR receipt is generated.</p>
+        <form id="walk-in-form" class="toolbar">
+          <div class="field"><label for="walk-in-name">Visitor name</label><input id="walk-in-name" name="visitorName" required minlength="2" maxlength="100"></div>
+          <div class="field"><label for="walk-in-email">Email</label><input id="walk-in-email" name="email" type="email" required></div>
+          <div class="field"><label for="walk-in-phone">Phone</label><input id="walk-in-phone" name="phone" type="tel" required minlength="7" maxlength="24"></div>
+          <div class="field"><label for="walk-in-nationality">Nationality</label><input id="walk-in-nationality" name="nationality" required minlength="2" maxlength="60"></div>
+          <div class="field"><label for="walk-in-diver-type">Diver type</label><select id="walk-in-diver-type" name="diverType" required><option value="recreational">Recreational</option><option value="technical">Technical</option></select></div>
+          <div class="field"><label for="walk-in-license">Lead diver license number</label><input id="walk-in-license" name="leadDiverLicenseNumber" required minlength="2" maxlength="60"></div>
+          <div class="field"><label for="walk-in-license-mode">Additional diver licenses</label><select id="walk-in-license-mode" name="licenseMode"><option value="individual">Individual licenses</option><option value="group">Group license</option></select></div>
+          <div class="field"><label for="walk-in-date">Visit date</label><input id="walk-in-date" name="visitDate" type="date" required></div>
+          <div class="field"><label for="walk-in-slot">Visit time</label><select id="walk-in-slot" name="timeSlot" required><option value="06:00-08:00">06:00–08:00</option><option value="08:00-10:00">08:00–10:00</option><option value="10:00-12:00">10:00–12:00</option><option value="12:00-14:00">12:00–14:00</option></select></div>
+          <div class="field"><label for="walk-in-count">Number of divers</label><input id="walk-in-count" name="numDivers" type="number" min="1" max="500" value="1" required></div>
+          <div class="field"><label for="walk-in-additional-names">Additional diver names</label><textarea id="walk-in-additional-names" rows="3" placeholder="One name per line; leave blank for one diver"></textarea></div>
+          <div class="field"><label for="walk-in-additional-licenses">Additional diver license numbers</label><textarea id="walk-in-additional-licenses" rows="3" placeholder="One license number per line for individual licenses"></textarea></div>
+          <button class="tides-motion-control" type="submit">Create walk-in booking</button>
+        </form>
+        <p id="walk-in-notice" class="notice" role="status"></p>
+        <div id="walk-in-receipt-link" class="form-actions"></div>
+      </details>
+      <form id="booking-filter-form" class="toolbar">
+        <div class="field"><label for="filter-date">Visit date</label><input id="filter-date" type="date"></div>
+        <div class="field"><label for="filter-visit-status">Visit classification</label><select id="filter-visit-status"><option value="">All classifications</option><option value="ongoing">Ongoing</option><option value="done">Done</option><option value="cancelled">Cancelled</option></select></div>
+        <div class="field"><label for="filter-status">Booking status</label><select id="filter-status"><option value="">All statuses</option><option>pending</option><option>confirmed</option><option>used</option><option>cancelled</option></select></div>
+        <div class="field"><label for="filter-payment">Payment status</label><select id="filter-payment"><option value="">All payments</option><option>pending</option><option value="pending_verification">Pending verification</option><option>rejected</option><option>paid</option><option>failed</option></select></div>
+        <button class="tides-motion-control" type="submit">Apply filters</button>
+      </form>
+      <div class="table-wrap"><table><thead><tr><th>Booking ID</th><th>Visitor</th><th>Email</th><th>Date</th><th>Slot</th><th>Divers</th><th>Amount</th><th>Payment</th><th>Proof review</th><th>Visit classification</th></tr></thead><tbody id="booking-rows"></tbody></table></div>
+    </section>
+    <section id="done-bookings" class="card" style="margin-top:1rem">
+      <h2>Done bookings</h2>
+      <p class="muted">All visitor bookings classified as done.</p>
+      <form id="done-report-form" class="toolbar">
+        <div class="field"><label for="done-report-period">Report period</label><select id="done-report-period" name="period"><option value="daily">Daily</option><option value="monthly">Monthly</option><option value="yearly">Calendar year</option><option value="1-year">Past 1 year</option><option value="2-year">Past 2 years</option><option value="3-year">Past 3 years</option></select></div>
+        <div id="done-report-date-field" class="field"><label for="done-report-date">Visit date</label><input id="done-report-date" name="date" type="date" required></div>
+        <div id="done-report-month-field" class="field" hidden><label for="done-report-month">Month</label><input id="done-report-month" name="month" type="month"></div>
+        <div id="done-report-year-field" class="field" hidden><label for="done-report-year">Year</label><input id="done-report-year" name="year" type="number" min="1000" max="9999"></div>
+        <button id="done-report-download" class="tides-motion-control" type="submit">Download Done report (CSV)</button>
+      </form>
+      <p id="done-report-notice" class="notice" role="status"></p>
+      <div class="table-wrap"><table><thead><tr><th>Booking ID</th><th>Visitor</th><th>Email</th><th>Visit date</th><th>Time slot</th><th>Divers</th><th>Amount</th><th>Payment</th></tr></thead><tbody id="done-booking-rows"></tbody></table></div>
+    </section>
+    <section id="cancelled-bookings" class="card" style="margin-top:1rem">
+      <h2>Cancelled bookings</h2>
+      <p class="muted">Cancelled bookings stay in the records for history; cancellation does not delete the booking or issue an automatic refund.</p>
+      <div class="table-wrap"><table><thead><tr><th>Booking ID</th><th>Visitor</th><th>Email</th><th>Visit date</th><th>Time slot</th><th>Divers</th><th>Amount</th><th>Payment</th></tr></thead><tbody id="cancelled-booking-rows"></tbody></table></div>
+    </section>
+    <section id="permit-verification" class="card" style="margin-top:1rem">
+      <h2>Verify a visitor permit</h2><p class="muted">Paste the QR code value to confirm payment and visit-date validity.</p>
+      <form id="admin-verify-form">
+        <div class="field"><label for="admin-permit-code">QR code value</label><textarea id="admin-permit-code" name="code" required></textarea></div>
+        <p id="admin-verify-notice" class="notice" role="status"></p><button class="tides-motion-control" type="submit">Verify permit</button>
+      </form>
+      <p id="admin-verify-result" class="availability" aria-live="polite"></p>
+    </section>
+    <section id="capacity" class="card" style="margin-top:1rem">
+      <h2>Daily capacity</h2><p class="muted">System default: <strong id="capacity-default">30</strong> divers per day. Per-date limits cannot be set below existing reservations.</p>
+      <form id="capacity-form" class="toolbar">
+        <div class="field"><label for="capacity-date">Date</label><input id="capacity-date" name="date" type="date" required></div>
+        <div class="field"><label for="maxDivers">Daily limit</label><input id="maxDivers" name="maxDivers" type="number" min="0" max="500" placeholder="Keep existing"></div>
+        <div class="field"><label for="blocked">Availability</label><select id="blocked" name="blocked"><option value="">Keep current</option><option value="false">Open</option><option value="true">Block date</option></select></div>
+        <button class="tides-motion-control" type="submit">Save date settings</button>
+      </form>
+      <p id="capacity-notice" class="notice" role="status"></p>
+      <div class="table-wrap"><table><thead><tr><th>Date</th><th>Reserved / maximum</th><th>Availability</th></tr></thead><tbody id="capacity-rows"></tbody></table></div>
+    </section>
+    <section id="system-settings" class="card" style="margin-top:1rem">
+      <h2>System defaults</h2><p class="muted">These values apply to new bookings and dates without an individual capacity setting.</p>
+      <form id="settings-form" class="toolbar">
+        <div class="field"><label for="setting-fee">Fee per diver (PHP)</label><input id="setting-fee" name="fee" type="number" min="0" max="100000" required></div>
+        <div class="field"><label for="setting-capacity">Default divers per day</label><input id="setting-capacity" name="maxDiversPerDay" type="number" min="0" max="500" required></div>
+        <button class="tides-motion-control" type="submit">Save system defaults</button>
+      </form>
+      <p id="settings-notice" class="notice" role="status"></p>
+    </section>
+    <section id="user-management" class="card" style="margin-top:1rem">
+      <h2>Staff accounts</h2><p class="muted">Administrator access is limited to admin accounts. Temporary passwords must have at least 10 characters; new accounts must change them at first sign-in.</p>
+      <form id="staff-form" class="form-grid">
+        <div class="field"><label for="staff-name">Full name</label><input id="staff-name" name="name" required minlength="2"></div>
+        <div class="field"><label for="staff-email">Email</label><input id="staff-email" name="email" type="email" required></div>
+        <div class="field"><label for="staff-password">Temporary password</label><input id="staff-password" name="password" type="password" minlength="10" required></div>
+        <div class="field"><label for="staff-role">Role</label><select id="staff-role" name="role"><option value="staff">Staff</option><option value="enforcement">Enforcement</option><option value="admin">Admin</option></select></div>
+        <div class="field full"><button type="submit">Create account</button></div>
+      </form>
+      <p id="staff-notice" class="notice" role="status"></p>
+      <div class="table-wrap"><table><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Created</th></tr></thead><tbody id="user-rows"></tbody></table></div>
+    </section>
+    <section id="compliance" class="card" style="margin-top:1rem">
+      <h2>Environmental compliance log</h2><p class="muted">Review reports filed by enforcement officers.</p>
+      <div class="table-wrap"><table><thead><tr><th>Reported</th><th>Type</th><th>Booking</th><th>Description</th><th>Officer</th><th>Status</th><th>Action</th></tr></thead><tbody id="violation-rows"></tbody></table></div>
+    </section>
+    <section id="audit-log" class="card" style="margin-top:1rem">
+      <h2>Staff action audit trail</h2><p class="muted">Recent booking, capacity, account, password, and enforcement actions. Up to 300 latest events are shown.</p>
+      <div class="table-wrap"><table><thead><tr><th>Time</th><th>Staff member</th><th>Role</th><th>Action</th><th>Record</th><th>Details</th></tr></thead><tbody id="audit-log-rows"></tbody></table></div>
+    </section>
+  </main>
+  <footer class="app-footer"><div class="app-footer-inner"><a class="travel-brand" href="/">TIDES<span>.</span></a><span>Tourism operations · Tabango, Leyte</span><strong>Protect the Shoal, Sustain the Future.</strong></div></footer>
+  <script src="/js/auth.js"></script><script src="/js/admin.js"></script><script src="/js/animations.js"></script>
+</body>
+</html>

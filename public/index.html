@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#081b31">
+  <meta name="description" content="Discover Kimud Shoal, Tabango, Leyte. Plan a responsible visit to the thresher shark sanctuary.">
+  <title>TIDES | Discover Kimud Shoal</title>
+  <link rel="stylesheet" href="/css/style.css?v=leaflet-osm">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body class="travel-home">
+  <main>
+    <section class="travel-hero" aria-labelledby="hero-title">
+      <div class="shoal-hero-backdrop" aria-hidden="true">
+        <span class="shoal-hero-backdrop-image is-active"></span>
+        <span class="shoal-hero-backdrop-image"></span>
+      </div>
+      <header class="travel-header">
+        <nav class="travel-nav" aria-label="Main navigation">
+          <a class="travel-brand" href="/" aria-label="TIDES home">TIDES<span>.</span></a>
+          <div class="travel-nav-links">
+            <a href="#destinations">Explore</a>
+            <a href="#shoal-about">The Shoal</a>
+            <a href="#ordinance">Requirements</a>
+            <a href="#getting-here">Getting Here</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#ordinance">Rules</a>
+          </div>
+          <div class="travel-nav-actions">
+            <a class="travel-nav-book tides-motion-control" href="/book.html">Plan your visit</a>
+            <a class="travel-signin tides-motion-control" href="/login.html">Visitor login</a>
+          </div>
+        </nav>
+      </header>
+      <div class="travel-hero-grid">
+        <div class="travel-hero-copy" id="discover">
+          <p class="travel-kicker">Tabango · Leyte · Philippines</p>
+          <h1 id="hero-title"><span>Discover</span>Kimud Shoal</h1>
+          <p class="travel-hero-subtitle">A thresher shark sanctuary in Tabango’s waters. Small groups, local licensed dive operators, and a reef left exactly as you found it.</p>
+          <div class="travel-hero-actions">
+            <a class="travel-button tides-motion-control" href="/book.html">Plan your visit <span aria-hidden="true">→</span></a>
+            <a class="travel-button travel-button-outline" href="#ordinance">Check requirements</a>
+          </div>
+          <div class="travel-hero-highlights" aria-label="Visit highlights">
+            <div><strong>Marine sanctuary</strong><span>Thresher shark protection</span></div>
+            <div><strong>Small groups</strong><span>Managed daily capacity</span></div>
+            <div><strong>Local operators</strong><span>Boat access from Tabango</span></div>
+          </div>
+          <a class="hero-scroll-link" href="#destinations"><span aria-hidden="true">↓</span> Scroll to explore</a>
+        </div>
+        <section class="shoal-gallery" aria-label="Kimud Shoal image gallery">
+          <div class="shoal-gallery-rail" role="group" aria-label="Choose a gallery image">
+            <button id="shoal-gallery-tab-0" data-image-index="0" data-background="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" type="button" aria-pressed="true" aria-label="Dive into the blue">
+              <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&amp;fit=crop&amp;w=420&amp;q=75" alt="">
+              <span>Dive into the blue</span>
+            </button>
+            <button id="shoal-gallery-tab-1" data-image-index="1" data-background="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" type="button" aria-pressed="false" aria-label="Life along the reef">
+              <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&amp;fit=crop&amp;w=420&amp;q=75" alt="">
+              <span>Life along the reef</span>
+            </button>
+            <button id="shoal-gallery-tab-2" data-image-index="2" data-background="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" type="button" aria-pressed="false" aria-label="Light beneath the waves">
+              <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&amp;fit=crop&amp;w=420&amp;q=75" alt="">
+              <span>Light beneath the waves</span>
+            </button>
+            <button id="shoal-gallery-tab-3" data-image-index="3" data-background="https://images.unsplash.com/photo-1682687982501-1e58ab814714?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" type="button" aria-pressed="false" aria-label="Into the deep blue">
+              <img src="https://images.unsplash.com/photo-1682687982501-1e58ab814714?auto=format&amp;fit=crop&amp;w=420&amp;q=75" alt="">
+              <span>Into the deep blue</span>
+            </button>
+            <button id="shoal-gallery-tab-4" data-image-index="4" data-background="https://images.unsplash.com/photo-1530053969600-caed2596d242?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" type="button" aria-pressed="false" aria-label="The journey to the shoal">
+              <img src="https://images.unsplash.com/photo-1530053969600-caed2596d242?auto=format&amp;fit=crop&amp;w=420&amp;q=75" alt="">
+              <span>The journey to the shoal</span>
+            </button>
+          </div>
+        </section>
+      </div>
+      <div class="travel-hero-facts" aria-label="Visitor planning information">
+        <div><span>Dive window</span><strong>6:00 AM–2:00 PM</strong></div>
+        <div><span>Default daily capacity</span><strong>30 divers</strong></div>
+        <div><span>Standard booking fee</span><strong>PHP 300 per diver</strong></div>
+        <div><span>Booking window</span><strong>Up to 90 days ahead</strong></div>
+        <p>Capacity and fees may be updated by the Tabango Tourism Office. Confirm boat schedules and sea conditions with your operator.</p>
+      </div>
+    </section>
+
+    <section class="travel-section travel-destinations" id="destinations">
+      <div class="travel-section-heading">
+        <p class="travel-overline">Find your next adventure</p>
+        <h2>Explore <span>Kimud Shoal</span></h2>
+        <p>Clear waters, colorful reefs, and an unforgettable encounter with the sea.</p>
+      </div>
+      <div class="destination-grid">
+        <article class="destination-card">
+          <button class="destination-image-trigger" type="button" data-dialog-target="#shoal-image-dialog" data-full-image="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&amp;fit=crop&amp;w=1400&amp;q=90" aria-label="View a larger image and learn about Kimud Shoal" aria-haspopup="dialog">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Divers exploring a clear tropical reef" loading="lazy">
+          </button>
+          <div class="destination-card-copy"><svg class="ico wave" viewBox="0 0 40 40" aria-hidden="true"><path d="M4 23c5-7 9 7 14 0s9 7 14 0 5-2 5-2"/><path d="M5 30c5-6 8 6 13 0s9 6 14 0 5-2 5-2"/></svg><span>Marine sanctuary</span><h3>Kimud Shoal</h3><p>Meet the gentle giants of the deep.</p><a href="/book.html">Explore visit dates <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="destination-card">
+          <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Sunlight over blue ocean water" loading="lazy">
+          <div class="destination-card-copy"><svg class="ico leaf" viewBox="0 0 40 40" aria-hidden="true"><path d="M31 7C17 8 9 14 9 24c0 5 4 9 9 9 10 0 15-12 13-26Z"/><path d="M8 34c5-9 10-14 19-21"/></svg><span>Coastal escape</span><h3>Tabango waters</h3><p>Find a slower rhythm along the coast.</p><a href="#about">Discover Tabango <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="destination-card">
+          <button class="destination-image-trigger" type="button" data-dialog-target="#dive-dialog" data-full-image="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&amp;fit=crop&amp;w=1400&amp;q=90" aria-label="View a larger image and learn about the Kimud Shoal dive" aria-haspopup="dialog">
+            <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Waves rolling across a tropical shoreline" loading="lazy">
+          </button>
+          <div class="destination-card-copy"><svg class="ico coral dive-card-icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 34V19m0 7-8-7m8 2 8-8m-8 3-1-9m-7 26v-8m16 8V16"/></svg><span>Kimud Shoal · Dive guide</span><h3>The Dive</h3><p>Discover the thresher shark dive at Kimud Shoal.</p><a href="#gallery">View the gallery <span aria-hidden="true">→</span></a></div>
+        </article>
+        <article class="destination-card">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Sunny tropical beach and turquoise water" loading="lazy">
+          <div class="destination-card-copy"><svg class="ico bubbles" viewBox="0 0 40 40" aria-hidden="true"><path d="M11 30a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm17-3a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM20 14a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M20 24c3-4 5-5 8-6M15 20l3-6"/></svg><span>Make it yours</span><h3>Your next dive</h3><p>Small groups. Thoughtful visits. Lasting memories.</p><a href="/book.html">Book a visit <span aria-hidden="true">→</span></a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="travel-section shoal-about-section" id="shoal-about" aria-labelledby="shoal-about-title">
+      <div class="shoal-about-image">
+        <img src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Colorful coral reef beneath clear water" loading="lazy">
+        <span class="shoal-about-image-caption">Kimud Shoal · Tabango, Leyte</span>
+      </div>
+      <div class="shoal-about-copy">
+        <p class="travel-overline">About the shoal</p>
+        <h2 id="shoal-about-title">A living sanctuary, <span>shaped by the sea.</span></h2>
+        <p>Kimud Shoal is presented as a marine sanctuary and aquatic and ecotourism destination in Tabango, Leyte. Its clear waters and marine life make each visit an opportunity to experience the sea with care.</p>
+        <h3>A story of local stewardship</h3>
+        <p>The shoal’s present conservation story is reflected in Municipal Ordinance No. 2025-07, which establishes local rules for the Kimud Shoal Marine Protected Area and Aquatic/Eco-Tourism Site. These rules prohibit disturbing thresher sharks, collecting marine life, littering, and unauthorized underwater activities.</p>
+        <p class="shoal-history-note">This page focuses on the shoal’s natural setting and current conservation guidance; it does not assign an unverified founding date or historical event.</p>
+        <a class="shoal-about-link" href="#ordinance">Explore the visitor rules <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="shoal-getting-here" id="getting-here" aria-labelledby="shoal-map-title">
+        <div class="shoal-map-heading">
+          <p class="travel-overline">Getting here</p>
+          <h3 id="shoal-map-title">Find your way to <span>Kimud Shoal</span></h3>
+          <p>Kimud Shoal is in Tabango’s municipal waters, about 13 km offshore from Barangay Tugas. Travel to Tabango by road, then arrange the boat crossing with a local licensed dive operator. Zoom and explore the map to locate the area.</p>
+        </div>
+        <div class="shoal-map-layout">
+          <div class="shoal-map-column">
+            <div class="shoal-map-frame">
+              <div id="shoal-overview-map" role="region" aria-label="Map showing the approximate location of Kimud Shoal off Tabango, Leyte"></div>
+              <button class="shoal-map-expand" type="button" aria-label="Expand map to fill the screen" aria-pressed="false">⛶ <span>Full screen</span></button>
+              <p class="shoal-map-fullscreen-credit">Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a> · Tiles © <a href="https://tile.openstreetmap.de/" target="_blank" rel="noopener noreferrer">openstreetmap.de</a></p>
+            </div>
+            <p class="shoal-map-attribution">Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a> · Tiles © <a href="https://tile.openstreetmap.de/" target="_blank" rel="noopener noreferrer">openstreetmap.de</a></p>
+            <p class="shoal-overview-map-status" role="status" hidden></p>
+          </div>
+          <div class="shoal-route-card">
+            <p class="travel-overline">Suggested approach</p>
+            <ol>
+              <li><strong>Arrive in Leyte</strong> via Tacloban Airport or Ormoc City.</li>
+              <li><strong>Travel to Tabango</strong> by road; confirm current travel times and transport with local providers.</li>
+              <li><strong>Continue by boat</strong> from the local departure point with a licensed operator. The shoal is offshore, so road navigation ends in Tabango.</li>
+            </ol>
+            <p class="shoal-map-coordinates">Shoal reference pin: 11.2800° N, 124.2532° E. This offshore pin is for orientation; confirm the boat departure point and sea conditions with your operator.</p>
+            <div class="shoal-map-actions">
+              <button class="shoal-map-directions" type="button" aria-haspopup="dialog" aria-controls="shoal-directions-dialog">Road directions to Tabango <span aria-hidden="true">↗</span></button>
+              <a class="shoal-map-pin-link" href="https://www.openstreetmap.org/?mlat=11.2800&amp;mlon=124.2532#map=13/11.2800/124.2532" target="_blank" rel="noopener noreferrer">View shoal pin <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="travel-section experience-section" id="experiences">
+      <div class="travel-section-heading">
+        <p class="travel-overline">Go a little deeper</p>
+        <h2>Make room for <span>the moment</span></h2>
+        <p>Whether it is your first descent or your hundredth, the best trips leave the reef just as they found it.</p>
+      </div>
+      <div class="experience-layout">
+        <div class="experience-photo experience-photo-main">
+          <img src="https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="A diver taking in the underwater world" loading="lazy">
+          <span class="photo-caption">Slow down. Look closer.</span>
+        </div>
+        <div class="experience-story">
+          <span class="travel-overline">A living sanctuary</span>
+          <h3>More than a dive.<br>A promise to protect.</h3>
+          <p>Kimud Shoal is known for encounters with thresher sharks and its rich marine life. Visitors help keep the experience safe and sustainable by following local guides and marine-protection rules.</p>
+          <div class="experience-facts">
+            <div><strong>30</strong><span>daily diver spaces<br>managed for the shoal</span></div>
+            <div><strong>₱300</strong><span>per diver<br>sandbox fee estimate</span></div>
+          </div>
+          <a class="travel-button" href="/book.html">Find your visit date</a>
+        </div>
+        <div class="experience-photo experience-photo-side">
+          <img src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?auto=format&amp;fit=crop&amp;w=700&amp;q=85" alt="Colorful tropical coral reef" loading="lazy">
+          <span class="photo-caption">Protect what brings us here.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="travel-section gallery-section" id="gallery">
+      <div class="travel-section-heading">
+        <p class="travel-overline">Postcards from the sea</p>
+        <h2>Small moments. <span>Big blue.</span></h2>
+        <p>Take only memories. Leave the reef thriving for the next visitor.</p>
+      </div>
+      <div class="travel-gallery">
+        <div class="travel-gallery-row" role="group" aria-label="Ocean gallery, first row">
+          <div class="travel-gallery-track">
+            <div class="travel-gallery-set">
+              <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&amp;fit=crop&amp;w=750&amp;q=85" alt="Diver swimming through blue water" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?auto=format&amp;fit=crop&amp;w=750&amp;q=85" alt="Sunlit coral reef" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&amp;fit=crop&amp;w=750&amp;q=85" alt="Ocean waves under a bright sky" loading="lazy">
+            </div>
+            <div class="travel-gallery-set" aria-hidden="true">
+              <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&amp;fit=crop&amp;w=750&amp;q=85" alt="">
+              <img src="https://images.unsplash.com/photo-1546026423-cc4642628d2b?auto=format&amp;fit=crop&amp;w=750&amp;q=85" alt="">
+              <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&amp;fit=crop&amp;w=750&amp;q=85" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="travel-gallery-row" role="group" aria-label="Ocean gallery, second row">
+          <div class="travel-gallery-track travel-gallery-track-reverse">
+            <div class="travel-gallery-set">
+              <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&amp;fit=crop&amp;w=750&amp;q=85" alt="Tropical water along the coastline" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=750&amp;q=85" alt="Beach framed by turquoise water" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?auto=format&amp;fit=crop&amp;w=750&amp;q=85" alt="Exploring a tropical underwater reef" loading="lazy">
+            </div>
+            <div class="travel-gallery-set" aria-hidden="true">
+              <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&amp;fit=crop&amp;w=750&amp;q=85" alt="">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=750&amp;q=85" alt="">
+              <img src="https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?auto=format&amp;fit=crop&amp;w=750&amp;q=85" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ordinance-section" id="ordinance">
+      <div class="ordinance-heading">
+        <p class="travel-overline">Kimud Shoal · Municipal Ordinance No. 2025-07</p>
+        <h2>Protect the shoal.<br><span>Know the rules.</span></h2>
+        <p>Violations of the rules governing the Kimud Shoal Marine Protected Area and Aquatic/Eco-Tourism Site are subject to the following penalties.</p>
+      </div>
+      <div class="ordinance-content">
+        <div class="penalty-card">
+          <h3>Violations and penalties</h3>
+          <div class="penalty-table-wrap">
+            <table class="penalty-table">
+              <thead><tr><th scope="col">Offense</th><th scope="col">Penalty</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">First offense</th><td>₱1,000 fine</td></tr>
+                <tr><th scope="row">Second offense</th><td>₱1,500 fine</td></tr>
+                <tr><th scope="row">Third and succeeding offenses</th><td>₱2,500 fine, imprisonment of up to six (6) months, or both, at the discretion of the court</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="ordinance-note">This summary is provided for visitor awareness. Please follow instructions from authorized local personnel.</p>
+        </div>
+        <div class="prohibited-card">
+          <h3>Examples of prohibited activities</h3>
+          <ul class="prohibited-list">
+            <li>Fishing, coral destruction, or collecting marine life.</li>
+            <li>Touching, chasing, or disturbing thresher sharks.</li>
+            <li>Freediving, snorkeling, or other unauthorized underwater activities.</li>
+            <li>Conducting prohibited dive training activities.</li>
+            <li>Diving outside designated operating hours: <strong>6:00 AM–2:00 PM.</strong></li>
+            <li>Littering, pollution, or improper anchoring.</li>
+            <li>Violating diving safety and marine conservation protocols.</li>
+          </ul>
+          <a class="ordinance-book-link" href="/book.html">Plan a responsible visit <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="stewardship-section" id="about">
+      <div class="stewardship-copy">
+        <p class="travel-overline">Travel with care</p>
+        <h2>Leave the shoal<br><span>better than you found it.</span></h2>
+        <p>Keep a respectful distance from wildlife, follow your guide's instructions, and bring reusable essentials. Every thoughtful visit helps sustain the future of Kimud Shoal.</p>
+        <a href="/book.html" class="stewardship-link">Reserve responsibly <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="stewardship-mark" aria-hidden="true">T<span>.</span></div>
+    </section>
+  </main>
+
+  <footer class="travel-footer">
+    <div class="travel-footer-top">
+      <a class="travel-brand" href="/">TIDES<span>.</span></a>
+      <p>Tourism Information, Divers Entry &amp; Scheduling</p>
+      <a class="footer-book-link" href="/book.html">Plan a visit <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="travel-footer-bottom">
+      <span>Tabango · Leyte · Philippines</span>
+      <strong>Protect the Shoal, Sustain the Future.</strong>
+      <a href="/login.html">Visitor login</a>
+    </div>
+  </footer>
+  <dialog class="shoal-image-dialog" id="shoal-image-dialog" aria-labelledby="shoal-dialog-title" aria-describedby="shoal-dialog-description">
+    <div class="shoal-dialog-layout">
+      <button class="shoal-dialog-close" type="button" aria-label="Close image popup">×</button>
+      <img class="shoal-dialog-image" src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&amp;fit=crop&amp;w=1400&amp;q=90" alt="Divers exploring a clear tropical reef">
+      <div class="shoal-dialog-copy">
+        <p class="travel-overline">Marine sanctuary · Tabango, Leyte</p>
+        <h2 id="shoal-dialog-title">The story of Kimud Shoal</h2>
+        <p id="shoal-dialog-description">Kimud Shoal is a marine protected area and aquatic/ecotourism site in Tabango, Leyte, known for thresher shark encounters and its underwater marine environment.</p>
+        <h3>A place protected through local care</h3>
+        <p>The local history documented here is the community’s ongoing work to protect the shoal. Municipal Ordinance No. 2025-07 sets the rules for the protected area and tourism site, including safeguards for thresher sharks and other marine life.</p>
+        <h3>What visitors should know</h3>
+        <p>Visits are managed to protect the site. Diving is limited to designated hours, 6:00 AM–2:00 PM. Fishing, collecting marine life, touching or disturbing sharks, littering, improper anchoring, and unauthorized underwater activities are prohibited.</p>
+        <p class="shoal-dialog-note">No founding date or earlier historical event is included because it has not been verified in the available local materials.</p>
+        <div class="shoal-dialog-actions">
+          <a class="travel-button tides-motion-control" href="#shoal-about">Explore more about the shoal</a>
+          <a class="shoal-dialog-rules" href="#ordinance">Read the visitor rules <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="shoal-image-dialog dive-image-dialog" id="dive-dialog" aria-labelledby="dive-dialog-title" aria-describedby="dive-dialog-description">
+    <div class="shoal-dialog-layout">
+      <button class="shoal-dialog-close" type="button" aria-label="Close dive information">×</button>
+      <img class="shoal-dialog-image" src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&amp;fit=crop&amp;w=1400&amp;q=90" alt="Waves rolling across a tropical shoreline">
+      <div class="shoal-dialog-copy">
+        <p class="travel-overline">Kimud Shoal · Dive guide</p>
+        <h2 id="dive-dialog-title">The Dive</h2>
+        <p id="dive-dialog-description">A daylight thresher shark dive at a sunken island rising from deep water in Leyte.</p>
+        <h3>The dive</h3>
+        <p>The crossing is longer than the old Monad run: 45 minutes to an hour by outrigger, southeast from Bounty Beach into Leyte waters. What you drop onto is a sunken island rising from more than 200 metres of water to a flattish top at 12 to 14 metres, with cleaning stations along it at roughly 18 to 22 metres. Divers settle back from the stations and wait, facing outward, the same discipline the shoal dive has always demanded.</p>
+        <p>The threshers come up from the deep to be worked over by cleaner wrasse, and more than one animal in view at a time is not unusual. The difference from Monad is light and time: at 12 to 22 metres in daylight there is ambient light for the eye and the camera, no-stop time is generous, and the window runs from first light through the morning rather than closing at sunrise. Dive operators report their best sightings in more than twenty years.</p>
+        <p>Beyond the threshers, the shoal carries the traffic expected at the edge of a 200-metre drop: whitetip reef sharks along the reef edge, devil rays, the occasional manta, tuna, turtles, and dolphins. These are wild sharks at a cleaning station. Stay low, stay behind the group, and let the animals come in rather than swimming out to meet them.</p>
+
+        <h3>At a glance</h3>
+        <dl class="dive-glance">
+          <div><dt>Typical depth</dt><dd>12–22 m <span>40–72 ft</span></dd></div>
+          <div><dt>Max guided depth</dt><dd>22 m <span>72 ft</span></dd></div>
+          <div><dt>Visibility</dt><dd>5–25 m <span>15–82 ft</span></dd></div>
+          <div><dt>Water temperature</dt><dd>25–30 °C <span>77–86 °F</span></dd></div>
+          <div><dt>Current</dt><dd>Moderate</dd></div>
+          <div><dt>Best months</dt><dd>March–May</dd></div>
+          <div class="dive-glance-detail"><dt>Difficulty</dt><dd>Intermediate</dd><p>Open Water with an instructor; Advanced Open Water for group dives. The plateau is 12–14 m and cleaning stations are 18–22 m.</p></div>
+          <div class="dive-glance-detail"><dt>Access</dt><dd>Day boat</dd><p>About 45–60 minutes by outrigger from Bounty Beach, southeast toward the Leyte coast. Boats leave around 4:30–5:30 AM for first light, though sightings can run through the morning.</p></div>
+          <div class="dive-glance-detail"><dt>Good for</dt><dd><span class="dive-tag">Big animals</span><span class="dive-tag">Photographers</span></dd></div>
+        </dl>
+
+        <h3>Background</h3>
+        <p>Until 2022, the thresher dive at Malapascua meant Monad Shoal, about 8 kilometres closer to the island, and Kimud was a secondary stop. In September 2022, thresher sightings at Monad dwindled over a few weeks and then stopped, and the sharks began appearing at Kimud instead.</p>
+        <p>Accounts differ on why the change happened. Evolution Diving and Alert Diver point to tiger sharks beginning to patrol Monad; Dive The World reports that threshers yielded the territory to hammerheads present from January to April. The move itself has held, and early boats now run to Kimud.</p>
+        <p class="shoal-dialog-note">Depth, visibility, season, and access details are dive-planning estimates and can vary with conditions. Follow local operator and guide instructions.</p>
+        <div class="shoal-dialog-actions">
+          <a class="travel-button tides-motion-control" href="/book.html">Plan your visit</a>
+          <a class="shoal-dialog-rules" href="#ordinance">Read the visitor rules <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+  <dialog class="shoal-directions-dialog" id="shoal-directions-dialog" aria-labelledby="shoal-directions-title" aria-describedby="shoal-directions-description">
+    <div class="shoal-directions-content">
+      <button class="shoal-dialog-close shoal-directions-close" type="button" aria-label="Close directions map">×</button>
+      <p class="travel-overline">Getting here · Tabango, Leyte</p>
+      <h2 id="shoal-directions-title">Directions to Kimud Shoal</h2>
+      <p id="shoal-directions-description">Use the map to locate Tabango and the offshore shoal. Travel by road to Tabango, then complete the final crossing by boat with a local licensed dive operator.</p>
+      <div class="shoal-directions-controls">
+        <label for="directions-origin">Starting point</label>
+        <select id="directions-origin">
+          <option value="current">My current location</option>
+          <option value="tacloban">Tacloban Airport</option>
+          <option value="ormoc">Ormoc City</option>
+          <option value="map" hidden disabled>Selected map point</option>
+        </select>
+        <button class="shoal-directions-route" type="button">Get directions</button>
+      </div>
+      <p class="shoal-directions-status" role="status" aria-live="polite">Allow location access to route from where you are, or choose Tacloban Airport or Ormoc City. You can also tap the map to set a starting point.</p>
+      <div class="shoal-directions-map">
+        <div id="shoal-directions-map" role="region" aria-label="Interactive route map to Tabango and Kimud Shoal"></div>
+        <button class="shoal-map-expand shoal-directions-map-expand" type="button" aria-label="Expand directions map to fill the screen" aria-pressed="false">⛶ <span>Full screen</span></button>
+        <p class="shoal-map-fullscreen-credit shoal-directions-fullscreen-credit">Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a> · Tiles © <a href="https://tile.openstreetmap.de/" target="_blank" rel="noopener noreferrer">openstreetmap.de</a></p>
+      </div>
+      <p class="shoal-directions-attribution">Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a> · Tiles © <a href="https://tile.openstreetmap.de/" target="_blank" rel="noopener noreferrer">openstreetmap.de</a></p>
+      <ol class="shoal-turn-directions" aria-label="Road directions"></ol>
+      <div class="shoal-directions-summary">
+        <p><strong>Tabango:</strong> 11.3077° N, 124.3730° E</p>
+        <p><strong>Kimud Shoal reference pin:</strong> 11.2800° N, 124.2532° E</p>
+        <p>The shoal is offshore; the map pin is approximate. Confirm your departure point, boat schedule, and sea conditions with your operator.</p>
+      </div>
+    </div>
+  </dialog>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="/js/home.js?v=gallery-back-20261103"></script>
+  <script src="/js/animations.js"></script>
+</body>
+</html>

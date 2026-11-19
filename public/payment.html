@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payment | TIDES</title>
+  <link rel="stylesheet" href="/css/style.css?v=checkout-flow-theme-20261114-clickable">
+</head>
+<body class="travel-app checkout-page">
+  <header class="app-header">
+    <nav class="app-nav" aria-label="Main navigation">
+      <a class="travel-brand" href="/">TIDES<span>.</span></a>
+      <div class="app-nav-links"><span>Kimud Shoal · Tabango</span></div>
+      <a class="app-nav-action" href="/my-bookings.html">Exit checkout</a>
+    </nav>
+  </header>
+  <main class="payment-checkout-shell">
+    <aside class="checkout-sidebar" aria-label="Booking progress">
+      <a class="checkout-sidebar-brand" href="/">TIDES<span>.</span></a>
+      <p class="checkout-sidebar-caption">VISIT RESERVATION</p>
+      <ol class="checkout-steps">
+        <li class="is-complete"><a class="checkout-step-link" href="#payment-visit-summary"><span class="checkout-step-icon" aria-hidden="true">✓</span><span>Visit details</span></a></li>
+        <li class="is-complete"><a class="checkout-step-link" href="#payment-diver-summary"><span class="checkout-step-icon" aria-hidden="true">✓</span><span>Diver information</span></a></li>
+        <li class="is-complete"><a class="checkout-step-link" href="#payment-total-summary"><span class="checkout-step-icon" aria-hidden="true">✓</span><span>Reservation review</span></a></li>
+        <li class="is-current" aria-current="step"><span class="checkout-step-current"><span class="checkout-step-icon" aria-hidden="true">4</span><span>Payment</span></span></li>
+      </ol>
+      <div class="checkout-sidebar-bottom">
+        <span class="checkout-secure-icon" aria-hidden="true">◇</span>
+        <strong>Protected reservation</strong>
+        <p>Your payment receipt is visible only to you and authorized tourism staff.</p>
+        <a href="/my-bookings.html">Need help? View your bookings</a>
+      </div>
+    </aside>
+
+    <section class="checkout-content" aria-labelledby="payment-title">
+      <div class="checkout-heading">
+        <a class="checkout-back-link" href="/my-bookings.html">← My bookings</a>
+        <span class="eyebrow">FINAL STEP · PAYMENT</span>
+        <h1 id="payment-title" class="page-title">Complete your reservation</h1>
+        <p class="muted">Review your booking and submit your payment receipt for staff verification.</p>
+      </div>
+
+      <div class="checkout-grid">
+        <div class="checkout-main-column">
+          <section class="checkout-panel" aria-labelledby="payment-method-title">
+            <div class="checkout-panel-heading">
+              <span class="checkout-section-number">01</span>
+              <div>
+                <h2 id="payment-method-title">Payment method</h2>
+                <p>Choose the wallet you used for your transfer.</p>
+              </div>
+            </div>
+            <div class="checkout-payment-destination">
+              <span class="checkout-notice-icon" aria-hidden="true">i</span>
+              <p><strong>Confirm the official payment details first.</strong> No GCash or Maya receiving account is configured on this website. Contact the Tabango Tourism Office before transferring. Never share your PIN or one-time code.</p>
+            </div>
+            <form id="payment-form" enctype="multipart/form-data">
+              <fieldset class="payment-options checkout-wallet-options">
+                <legend>Select payment wallet</legend>
+                <label class="payment-option checkout-wallet-option">
+                  <input type="radio" name="method" value="gcash" checked required>
+                  <span class="checkout-wallet-mark gcash-mark" aria-hidden="true">G</span>
+                  <span><strong>GCash</strong><small>Paid using GCash</small></span>
+                  <span class="checkout-wallet-check" aria-hidden="true"></span>
+                </label>
+                <label class="payment-option checkout-wallet-option">
+                  <input type="radio" name="method" value="maya" required>
+                  <span class="checkout-wallet-mark maya-mark" aria-hidden="true">M</span>
+                  <span><strong>Maya</strong><small>Paid using Maya</small></span>
+                  <span class="checkout-wallet-check" aria-hidden="true"></span>
+                </label>
+              </fieldset>
+
+              <div class="checkout-upload-heading">
+                <div>
+                  <h3>Payment receipt</h3>
+                  <p>Upload a clear screenshot or image of your successful transfer.</p>
+                </div>
+                <span class="checkout-upload-limit">MAX 5 MB</span>
+              </div>
+              <label class="checkout-upload-zone" for="payment-proof">
+                <span class="checkout-upload-icon" aria-hidden="true">↑</span>
+                <strong>Choose receipt image</strong>
+                <span>JPEG, PNG, or WebP</span>
+                <input id="payment-proof" name="proof" type="file" accept="image/jpeg,image/png,image/webp" required>
+              </label>
+              <p id="payment-file-status" class="checkout-file-status muted" role="status">No file selected.</p>
+              <img id="payment-proof-preview" class="payment-proof-preview hidden" alt="Preview of selected payment receipt">
+              <p id="payment-notice" class="notice" role="alert"></p>
+              <div class="checkout-submit-row">
+                <p>By submitting, you confirm this transfer was made for this reservation.</p>
+                <button class="tides-motion-control" type="submit">Submit receipt <span aria-hidden="true">→</span></button>
+              </div>
+            </form>
+          </section>
+
+          <section id="payment-success-receipt" class="form-card receipt-card hidden" aria-live="polite">
+            <div class="receipt-brand"><span class="eyebrow">Tabango · Leyte · Philippines</span><strong>TIDES<span>.</span></strong></div>
+            <div id="payment-receipt-status" class="receipt-paid-stamp"></div>
+            <h2 class="page-title">Booking receipt</h2>
+            <p id="payment-receipt-message" class="muted"></p>
+            <p id="payment-upload-success" class="notice success" role="status"></p>
+            <div class="receipt-body">
+              <div class="receipt-line"><strong>Receipt / booking ID</strong><span id="payment-receipt-id"></span></div>
+              <div class="receipt-line"><strong>Visitor</strong><span id="payment-receipt-visitor"></span></div>
+              <div class="receipt-line"><strong>Email</strong><span id="payment-receipt-email"></span></div>
+              <div class="receipt-line"><strong>Visit date &amp; time</strong><span id="payment-receipt-date"></span></div>
+              <div class="receipt-line"><strong>Group size</strong><span id="payment-receipt-divers"></span></div>
+              <div class="receipt-line"><strong>Payment method</strong><span id="payment-receipt-method"></span></div>
+              <div class="receipt-line"><strong>Payment reference</strong><span id="payment-receipt-reference"></span></div>
+              <div class="receipt-line"><strong>Receipt image uploaded</strong><span id="payment-receipt-file"></span></div>
+              <div class="receipt-line"><strong>Payment status</strong><span id="payment-receipt-payment-status"></span></div>
+              <div class="receipt-line"><strong>Receipt submitted</strong><span id="payment-receipt-uploaded-at"></span></div>
+              <div class="receipt-line"><strong>Payment verified</strong><span id="payment-receipt-paid-at"></span></div>
+              <div class="receipt-roster"><strong>Diver roster</strong><ul id="payment-receipt-diver-list" class="diver-roster"></ul></div>
+              <div class="receipt-total"><strong id="payment-receipt-total-label"></strong><strong id="payment-receipt-amount"></strong></div>
+            </div>
+            <div id="payment-uploaded-proof" class="receipt-uploaded-proof hidden">
+              <strong>Uploaded payment receipt image</strong>
+              <img id="payment-uploaded-proof-image" alt="Your uploaded payment receipt">
+              <a id="payment-uploaded-proof-link" target="_blank" rel="noopener">Open uploaded image</a>
+            </div>
+            <div class="receipt-permit">
+              <img id="payment-receipt-qr" class="qr-display hidden" alt="QR code to open the full TIDES booking receipt">
+              <p id="payment-receipt-qr-message" class="muted"></p>
+            </div>
+            <div class="form-actions receipt-actions">
+              <a class="button secondary" href="/my-bookings.html">My bookings</a>
+              <a class="button secondary" href="/book.html">Proceed to another booking</a>
+              <button id="payment-download-receipt" type="button">Download full receipt + QR</button>
+            </div>
+          </section>
+        </div>
+
+        <aside class="checkout-summary" aria-label="Reservation summary">
+          <div class="checkout-summary-heading">
+            <span class="eyebrow">YOUR RESERVATION</span>
+            <span class="checkout-summary-icon" aria-hidden="true">⌖</span>
+          </div>
+          <h2>Kimud Shoal</h2>
+          <p class="checkout-summary-location">Tabango · Leyte</p>
+          <div class="checkout-summary-divider"></div>
+          <div id="payment-visit-summary" class="checkout-summary-section">
+            <p id="payment-booking" class="checkout-booking-id"></p>
+            <p id="payment-divers" class="checkout-summary-visit"></p>
+          </div>
+          <div id="payment-diver-summary" class="checkout-summary-divers">
+            <strong>Diver roster</strong>
+            <ul id="payment-diver-roster" class="diver-roster"></ul>
+          </div>
+          <div id="payment-total-summary" class="checkout-summary-total">
+            <span>Total due</span>
+            <strong id="payment-total"></strong>
+          </div>
+          <p class="checkout-summary-footnote">Your booking is not confirmed until staff verifies your payment receipt.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <script src="/js/receipt.js"></script>
+  <script src="/js/payment.js"></script>
+  <script src="/js/animations.js"></script>
+</body>
+</html>

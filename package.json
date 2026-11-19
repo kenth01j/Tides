@@ -1,0 +1,25 @@
+{
+  "name": "tides-kimud-shoal",
+  "version": "1.0.0",
+  "description": "Tourism Information, Divers Entry & Scheduling platform for Kimud Shoal",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "seed": "node server/seed.js",
+    "test": "node --test server/test/bookingRateLimit.test.js server/test/config.test.js server/test/csv.test.js server/test/doneReport.test.js server/test/diverNames.test.js server/test/paymentProof.test.js server/test/publicBaseUrl.test.js server/test/qrGenerator.test.js server/test/visitStatusRules.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-validator": "^7.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "mongoose": "^8.9.5",
+    "qrcode": "^1.5.4"
+  }
+}

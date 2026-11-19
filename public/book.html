@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Book a visit | TIDES</title><link rel="stylesheet" href="/css/style.css?v=checkout-flow-theme-20261114-clickable"></head>
+<body class="travel-app checkout-page booking-checkout-page">
+  <header class="app-header">
+    <nav class="app-nav" aria-label="Main navigation">
+      <a class="travel-brand" href="/">TIDES<span>.</span></a>
+      <div class="app-nav-links"><span>Kimud Shoal · Tabango</span></div>
+      <a class="app-nav-action" href="/">Exit booking</a>
+    </nav>
+  </header>
+  <main class="payment-checkout-shell">
+    <aside class="checkout-sidebar" aria-label="Booking progress">
+      <a class="checkout-sidebar-brand" href="/">TIDES<span>.</span></a>
+      <p class="checkout-sidebar-caption">VISIT RESERVATION</p>
+      <ol class="checkout-steps">
+        <li class="is-current" data-checkout-step aria-current="step"><button class="checkout-step-link" type="button" data-booking-step="0" disabled><span class="checkout-step-icon">1</span><span>Visit details</span></button></li>
+        <li data-checkout-step><button class="checkout-step-link" type="button" data-booking-step="1" disabled><span class="checkout-step-icon">2</span><span>Diver information</span></button></li>
+        <li data-checkout-step><button class="checkout-step-link" type="button" data-booking-step="2" disabled><span class="checkout-step-icon">3</span><span>Reservation review</span></button></li>
+        <li><span class="checkout-step-current"><span class="checkout-step-icon">4</span><span>Payment</span></span></li>
+      </ol>
+      <div class="checkout-sidebar-bottom">
+        <span class="checkout-secure-icon" aria-hidden="true">◇</span>
+        <strong>Kimud Shoal · Tabango</strong>
+        <p>Reserve a date up to 90 days ahead. Visits operate from 6:00 AM to 2:00 PM.</p>
+        <a href="/my-bookings.html">Need help? View your bookings</a>
+      </div>
+    </aside>
+
+    <section class="checkout-content" aria-labelledby="booking-page-title">
+      <div class="checkout-heading">
+        <a class="checkout-back-link" href="/">← Visitor portal</a>
+        <span id="booking-kicker" class="eyebrow">STEP 1 OF 4 · VISIT DETAILS</span>
+        <h1 id="booking-page-title" class="page-title">Plan your visit</h1>
+        <p class="muted">Reserve a date up to 90 days ahead. Fee: <strong id="booking-fee">PHP 300 per diver</strong>. Visits operate between 6:00 AM and 2:00 PM under Municipal Ordinance No. 2025-07.</p>
+        <p id="booking-access-note" class="notice" role="alert"></p>
+      </div>
+
+      <div class="checkout-grid">
+        <div class="checkout-main-column">
+          <section id="booking-form-panel" class="checkout-panel booking-panel" aria-labelledby="booking-dialog-title">
+            <div class="checkout-panel-heading">
+              <span id="booking-section-number" class="checkout-section-number">01</span>
+              <div>
+                <h2 id="booking-dialog-title">Visit details</h2>
+                <p id="booking-step-description">Choose your visit date, arrival time, group size, and diver type.</p>
+              </div>
+            </div>
+      <p id="booking-step-label" class="booking-step-label" aria-live="polite">Step 1 of 4 · Visit details</p>
+      <div id="availability" class="availability" aria-live="polite">Choose a visit date to view available spaces and time slots.</div>
+      <form id="booking-form" novalidate>
+        <div class="form-grid">
+          <div class="field"><label for="visitorName">Lead diver full name</label><input id="visitorName" name="visitorName" autocomplete="name" required minlength="2" maxlength="100"></div>
+          <div class="field"><label for="leadDiverLicenseNumber">Lead diver scuba license number</label><input id="leadDiverLicenseNumber" name="leadDiverLicenseNumber" type="text" autocomplete="off" required minlength="2" maxlength="60"></div>
+          <div class="field"><label for="licenseMode">Diver license arrangement</label><select id="licenseMode" name="licenseMode" required><option value="individual" selected>Individual licenses</option><option value="group">Group license</option></select><small id="license-mode-help" class="muted">Each diver must provide their own scuba license number.</small></div>
+          <div class="field"><label for="email">Visitor account email</label><input id="email" name="email" type="email" autocomplete="email" readonly required></div>
+          <div class="field"><label for="phone">Mobile number</label><input id="phone" name="phone" type="tel" autocomplete="tel" required minlength="7" maxlength="24" placeholder="+63 9XX XXX XXXX"></div>
+          <div class="field"><label for="nationality">Nationality</label><select id="nationality" name="nationality" autocomplete="country-name" required><option value="">Select nationality</option><option>Afghan</option><option>Albanian</option><option>Algerian</option><option>American</option><option>Andorran</option><option>Angolan</option><option>Antiguan and Barbudan</option><option>Argentine</option><option>Armenian</option><option>Australian</option><option>Austrian</option><option>Azerbaijani</option><option>Bahamian</option><option>Bahraini</option><option>Bangladeshi</option><option>Barbadian</option><option>Belarusian</option><option>Belgian</option><option>Belizean</option><option>Beninese</option><option>Bhutanese</option><option>Bolivian</option><option>Bosnian</option><option>Botswanan</option><option>Brazilian</option><option>British</option><option>Bruneian</option><option>Bulgarian</option><option>Burkinabè</option><option>Burundian</option><option>Cambodian</option><option>Cameroonian</option><option>Canadian</option><option>Cape Verdean</option><option>Central African</option><option>Chadian</option><option>Chilean</option><option>Chinese</option><option>Colombian</option><option>Comorian</option><option>Congolese</option><option>Costa Rican</option><option>Croatian</option><option>Cuban</option><option>Cypriot</option><option>Czech</option><option>Danish</option><option>Djiboutian</option><option>Dominican</option><option>Dominican (Republic)</option><option>East Timorese</option><option>Ecuadorian</option><option>Egyptian</option><option>Emirati</option><option>Equatorial Guinean</option><option>Eritrean</option><option>Estonian</option><option>Eswatini</option><option>Ethiopian</option><option>Fijian</option><option>Filipino</option><option>Finnish</option><option>French</option><option>Gabonese</option><option>Gambian</option><option>Georgian</option><option>German</option><option>Ghanaian</option><option>Greek</option><option>Grenadian</option><option>Guatemalan</option><option>Guinean</option><option>Guyanese</option><option>Haitian</option><option>Honduran</option><option>Hungarian</option><option>Icelandic</option><option>Indian</option><option>Indonesian</option><option>Iranian</option><option>Iraqi</option><option>Irish</option><option>Israeli</option><option>Italian</option><option>Ivorian</option><option>Jamaican</option><option>Japanese</option><option>Jordanian</option><option>Kazakh</option><option>Kenyan</option><option>Kiribati</option><option>Kuwaiti</option><option>Kyrgyz</option><option>Lao</option><option>Latvian</option><option>Lebanese</option><option>Liberian</option><option>Libyan</option><option>Liechtensteiner</option><option>Lithuanian</option><option>Luxembourgish</option><option>Malagasy</option><option>Malawian</option><option>Malaysian</option><option>Maldivian</option><option>Malian</option><option>Maltese</option><option>Marshallese</option><option>Mauritanian</option><option>Mauritian</option><option>Mexican</option><option>Micronesian</option><option>Moldovan</option><option>Monégasque</option><option>Mongolian</option><option>Montenegrin</option><option>Moroccan</option><option>Mozambican</option><option>Myanmar</option><option>Namibian</option><option>Nauruan</option><option>Nepali</option><option>New Zealander</option><option>Nicaraguan</option><option>Nigerien</option><option>Nigerian</option><option>North Korean</option><option>North Macedonian</option><option>Norwegian</option><option>Omani</option><option>Pakistani</option><option>Palauan</option><option>Palestinian</option><option>Panamanian</option><option>Papua New Guinean</option><option>Paraguayan</option><option>Peruvian</option><option>Polish</option><option>Portuguese</option><option>Qatari</option><option>Romanian</option><option>Russian</option><option>Rwandan</option><option>Saint Kitts and Nevisian</option><option>Saint Lucian</option><option>Saint Vincentian</option><option>Samoan</option><option>San Marinese</option><option>São Toméan</option><option>Saudi</option><option>Senegalese</option><option>Serbian</option><option>Seychellois</option><option>Sierra Leonean</option><option>Singaporean</option><option>Slovak</option><option>Slovenian</option><option>Solomon Islander</option><option>Somali</option><option>South African</option><option>South Korean</option><option>South Sudanese</option><option>Spanish</option><option>Sri Lankan</option><option>Sudanese</option><option>Surinamese</option><option>Swedish</option><option>Swiss</option><option>Syrian</option><option>Taiwanese</option><option>Tajik</option><option>Tanzanian</option><option>Thai</option><option>Togolese</option><option>Tongan</option><option>Trinidadian and Tobagonian</option><option>Tunisian</option><option>Turkish</option><option>Turkmen</option><option>Tuvaluan</option><option>Ugandan</option><option>Ukrainian</option><option>Uruguayan</option><option>Uzbek</option><option>Vanuatuan</option><option>Venezuelan</option><option>Vietnamese</option><option>Yemeni</option><option>Zambian</option><option>Zimbabwean</option></select></div>
+          <div class="field"><label for="diverType">Diver type</label><select id="diverType" name="diverType" required><option value="">Select type</option><option value="recreational">Recreational scuba diver</option><option value="technical">Technical scuba diver</option></select></div>
+          <div class="field"><label for="numDivers">Number of divers</label><input id="numDivers" name="numDivers" type="number" min="1" max="500" value="1" required></div>
+          <fieldset id="additional-divers" class="field full diver-name-fields" hidden></fieldset>
+          <div class="field"><label for="visitDate">Visit date</label><input id="visitDate" name="visitDate" type="date" required></div>
+          <div class="field"><label for="timeSlot">Arrival time slot</label><select id="timeSlot" name="timeSlot" required disabled><option value="">Select a date first</option><option>06:00-08:00</option><option>08:00-10:00</option><option>10:00-12:00</option><option>12:00-14:00</option></select></div>
+        </div>
+        <p id="booking-notice" class="notice" role="alert"></p>
+      </form>
+          </section>
+        </div>
+
+        <aside class="checkout-summary" aria-label="Reservation summary">
+          <div class="checkout-summary-heading">
+            <span class="eyebrow">YOUR RESERVATION</span>
+            <span class="checkout-summary-icon" aria-hidden="true">⌖</span>
+          </div>
+          <h2>Kimud Shoal</h2>
+          <p class="checkout-summary-location">Tabango · Leyte</p>
+          <div class="checkout-summary-divider"></div>
+          <p id="booking-summary-visit" class="checkout-summary-visit">Choose a visit date and time</p>
+          <div class="checkout-summary-divers">
+            <strong>Group size</strong>
+            <p id="booking-summary-divers" class="booking-summary-count">1 diver</p>
+          </div>
+          <div class="checkout-summary-total">
+            <span>Estimated fee</span>
+            <strong id="booking-summary-total">PHP 300</strong>
+          </div>
+          <div class="checkout-summary-rules">
+            <strong>Before booking</strong>
+            <p>Freediving, snorkeling, and disturbing marine life are prohibited.</p>
+            <button type="button" class="booking-rules-trigger" data-open-booking-rules>Read visitor rules →</button>
+            <p>For onsite reservations, please contact the tourism administrator.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <dialog id="booking-rules-dialog" class="booking-rules-dialog" aria-labelledby="booking-rules-title">
+    <div class="booking-rules-sheet">
+      <div class="booking-rules-heading">
+        <div>
+          <span class="eyebrow">Kimud Shoal · Municipal Ordinance No. 2025-07</span>
+          <h2 id="booking-rules-title">Visitor rules and penalties</h2>
+        </div>
+        <button id="booking-rules-close" class="booking-close" type="button" aria-label="Close visitor rules">×</button>
+      </div>
+      <p>Violations of the rules governing the Kimud Shoal Marine Protected Area and Aquatic/Eco-Tourism Site are subject to the following penalties.</p>
+      <h3>Violations and penalties</h3>
+      <div class="penalty-table-wrap">
+        <table class="penalty-table">
+          <thead><tr><th scope="col">Offense</th><th scope="col">Penalty</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">First offense</th><td>₱1,000 fine</td></tr>
+            <tr><th scope="row">Second offense</th><td>₱1,500 fine</td></tr>
+            <tr><th scope="row">Third and succeeding offenses</th><td>₱2,500 fine, imprisonment of up to six (6) months, or both, at the discretion of the court</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Examples of prohibited activities</h3>
+      <ul class="prohibited-list">
+        <li>Fishing, coral destruction, or collecting marine life.</li>
+        <li>Touching, chasing, or disturbing thresher sharks.</li>
+        <li>Freediving, snorkeling, or other unauthorized underwater activities.</li>
+        <li>Conducting prohibited dive training activities.</li>
+        <li>Diving outside designated operating hours: <strong>6:00 AM–2:00 PM.</strong></li>
+        <li>Littering, pollution, or improper anchoring.</li>
+        <li>Violating diving safety and marine conservation protocols.</li>
+      </ul>
+      <p class="ordinance-note">This summary is provided for visitor awareness. Please follow instructions from authorized local personnel.</p>
+    </div>
+  </dialog>
+  <footer class="app-footer"><div class="app-footer-inner"><a class="travel-brand" href="/">TIDES<span>.</span></a><span>Tabango · Leyte · Philippines</span><strong>Protect the Shoal, Sustain the Future.</strong></div></footer>
+  <script src="/js/booking.js?v=checkout-flow-20261114-clickable"></script>
+  <script src="/js/animations.js"></script>
+</body>
+</html>
